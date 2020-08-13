@@ -48,12 +48,10 @@ Flags:
       --license.key=""           License key for PromLens (set either this or --license.key-file).
       --license.key-file=""      Path to a file containing the license key for PromLens (set either this or --license.key).
       --shared-links.gcs.bucket=""
-                                 Name of the GCS bucket for storing shared links. Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the JSON file defining your service account credentials (needs to have permission to create, delete, and view objects
-                                 in the provided bucket).
+                                 Name of the GCS bucket for storing shared links. Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the JSON file defining your service account credentials (needs to have permission to create, delete, and view objects in the provided bucket).
       --shared-links.sql.driver=""
                                  The SQL driver to use for storing shared links in a SQL database. Supported values: [mysql, sqlite3].
-      --shared-links.sql.dsn=""  SQL Data Source Name when using an SQL database to shared links (see https://github.com/go-sql-driver/mysql#dsn-data-source-name) for MySQL, https://github.com/mattn/go-sqlite3#dsn-examples for SQLite3). Alternatively, use the environment
-                                 variable PROMLENS_SHARED_LINKS_DSN to indicate this value.
+      --shared-links.sql.dsn=""  SQL Data Source Name when using an SQL database to shared links (see https://github.com/go-sql-driver/mysql#dsn-data-source-name) for MySQL, https://github.com/mattn/go-sqlite3#dsn-examples for SQLite3). Alternatively, use the environment variable PROMLENS_SHARED_LINKS_DSN to indicate this value.
       --shared-links.sql.create-tables
                                  Whether to automatically create the required tables when using a SQL database for shared links.
       --grafana.url=""           The URL of your Grafana installation, to enable the Grafana datasource selector.
@@ -62,9 +60,10 @@ Flags:
                                  A file containing the auth token to pass to the Grafana API.
       --web.listen-address=":8080"
                                  The address to listen on for the web API.
-      --web.external-url=""      The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix
-                                 all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically.
+      --web.external-url=""      The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically.
       --web.route-prefix=""      Prefix for the internal routes of web endpoints. Defaults to path of --web.external-url.
+      --web.default-prometheus-url=""
+                                 The default Prometheus URL to load PromLens with.
       --log.level=info           Only log messages with the given severity or above. One of: [debug, info, warn, error]
       --log.format=logfmt        Output format of log messages. One of: [logfmt, json]
 ```
