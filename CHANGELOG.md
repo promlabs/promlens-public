@@ -1,3 +1,7 @@
+## 0.9.1 / 2020-09-08
+
+* [BUGFIX]: Pull in changes from latest `codemirror-promql` package that make snippet placeholder texts syntactically problematic for PromQL (by not including `<` and `>` around the placeholder text). Besides avoiding extraneous linter errors, this avoids a JavaScript error in the CodeMirror Next linter which could happen during autocomplete in a broken expression, and which still needs to be tracked down upstream.
+
 ## 0.9.0 / 2020-09-07
 
 * [FEATURE]: The Monaco-based PromQL text editor has been completely replaced with a CodeMirror-Next-based one. This introduces a full parser system that allows for **contextual autocompletion of metric names, label names/values, function names, operators, and other keywords**. It also introduces an **offline linter, showing many common PromQL errors** directly in the text input field.
