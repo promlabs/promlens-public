@@ -4,17 +4,15 @@ This repository contains documentation and public issues and feature requests fo
 
 ## Reporting issues
 
-Please file public issues on the [GitHub issue tracker](https://github.com/promlabs/promlens-public/issues).
+Please file issues on the [GitHub issue tracker](https://github.com/promlabs/promlens-public/issues).
 
-## Running PromLens yourself
+## Running PromLens
 
-The following documents how to run PromLens yourself using the [official preview Docker image](https://hub.docker.com/).
-
-NOTE THAT PROMLENS IS STILL IN AN EXPERIMENTAL PREVIEW VERSION AND IS PROVIDED AS-IS.
+The following documents how to run PromLens yourself using the [official Docker image](https://hub.docker.com/r/promlabs/promlens).
 
 ### Example deployment
 
-To run PromLens without a license key, and with link sharing and Grafana integration disabled:
+To run PromLens as a preview version without a license key, and with commercial features (link sharing, Grafana integration, etc.) disabled:
 
 ```
 docker run -p 8080:8080 promlabs/promlens
@@ -70,7 +68,7 @@ Flags:
 
 ### Providing a license key (OPTIONAL, for non-free features)
 
-To enable non-free PromLens features such as the Grafana datasource selector and link sharing, you will need to provide a license key. If you are interested in a trial license key, please send an email to info@promlabs.com.
+To enable non-free PromLens features such as the Grafana datasource selector and link sharing, you will need to provide a license key. If you are interested in a trial license key, please just ask for one at info@promlabs.com or sign up at https://promlens.com/pricing.
 
 To start PromLens with the license key provided directly as a flag value:
 
@@ -87,6 +85,8 @@ docker run -p 8080:8080 promlabs/promlens --license.key-file=$LICENSE_KEY_FILE
 ### Enabling link sharing
 
 **NOTE:** Link sharing requires a valid PromLens license key.
+
+Link sharing allows persisting the state of an entire PromLens query page and sharing it with others.
 
 By default, the link sharing backend is disabled. You can enable link sharing either via Google Cloud Storage, MySQL, or SQLite3:
 
@@ -135,24 +135,26 @@ To create an API token suitable for looking up datasources in Grafana:
 - Give the key a descriptive name, set the "Role" to "Admin", and set its life time to the desired duration (long is recommended, as you will need to regenerate it frequently otherwise).
 - Press "Add" and note down the displayed API key.
 
+### Direct links to queries
+
+If you have a valid license key, you can link to a specific query without creating a persisted shared link, by appending a `q` query parameter to the PromLens URL. For example, https://promlens.com/?q=up directly displays and executes the query `up`. For more complex shared pages, we still recommend creating a full shared page link, as this allows more control over the tree view state, as well as the selected visualization methods.
+
 ### Architecture
 
 Depending on whether you enable commercial features with a license, the PromLens backend has fewer or more responsibilities:
 
-#### Basic features
+#### Preview features
 
-When running PromLens with basic features (no Grafana integration or link sharing), the backend is only used to serve static assets and parse PromQL queries into a tree view:
+When running the preview version of PromLens without a license key, the backend is only used to serve static assets and parse PromQL queries into a tree view:
 
 ![Basic PromLens architecture](images/promlens_basic_architecture.svg)
 
-#### Commercial features (with license)
+#### Full features (with license)
 
-If you enable link sharing and/or Grafana datasource integration, the backend also stores and retrieves shared links and connects to Grafana to list datasources and proxy queries:
+If you enable link sharing and/or Grafana datasource integration when using PromLens with a license key, the backend also stores and retrieves shared links and connects to Grafana to list datasources and proxy queries:
 
 ![Advanced PromLens architecture](images/promlens_advanced_architecture.svg)
 
 ### License
 
-See the LICENSE file included in the Docker image for detailed terms and conditions.
-
-If you are interested in a trial license key to unlock commercial features, please send an email to info@promlabs.com.
+If you are interested in a trial license key to unlock commercial features, please send an email to info@promlabs.com or sign up at https://promlens.com/pricing.
