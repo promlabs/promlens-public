@@ -1,5 +1,18 @@
 ## 0.11.0 / 2020-12-15
 
+**Breaking Change:** When upgrading using an existing SQLite3 database to store shared links, you need to manually update the schema of the `views` table to the following (the `ON DELETE CASCADE` is new):
+
+```sql
+CREATE TABLE view(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  link_id INTEGER,
+  viewed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY(link_id) REFERENCES link(id) ON DELETE CASCADE
+)
+```
+
+You may also simply delete the `views` table to have PromLens recreate it for you.
+
 * [FEATURE]: Tree nodes are now annotated with warning hints for query constructs that are likely erroneous or unintended (e.g. using `rate()` on a gauge metric). Hovering over the hint shows details. Showing of hints is configurable in the global settings menu.
 * [FEATURE]: There are now more quick action buttons on tree nodes for common query actions, and hovering over an action button explains the action in more detail.
 * [FEATURE]: When hovering over a label name in the tree view, a popup now shows the top 5 label values by occurrence count.
