@@ -1,3 +1,19 @@
+## 0.11.0 / 2020-12-15
+
+* [FEATURE]: Tree nodes are now annotated with warning hints for query constructs that are likely erroneous or unintended (e.g. using `rate()` on a gauge metric). Hovering over the hint shows details. Showing of hints is configurable in the global settings menu.
+* [FEATURE]: There are now more quick action buttons on tree nodes for common query actions, and hovering over an action button explains the action in more detail.
+* [FEATURE]: When hovering over a label name in the tree view, a popup now shows the top 5 label values by occurrence count.
+* [FEATURE]: When clicking on a label name in the tree view, a query is inserted that shows all values for that label, sorted by their number of occurrences in the respective original expression.
+* [FEATURE]: For SQL-based link-sharing databases, a new `--shared-links.sql.retention` flag allows setting a maximum retention time. A periodic cleanup loop deletes any links older than the configured retention time.
+* [ENHANCEMENT]: The first query on the page can now also be removed / cleared.
+* [ENHANCEMENT]: A new "Enter" icon at the end of the expression input indicates how to execute the expression and shows further information on hover.
+* [ENHANCEMENT]: An improved error message is shown when trying to use a HTTP-based datasource URL while PromLens is being served via HTTPS.
+* [ENHANCEMENT]: Minor style cleanups.
+* [ENHANCEMENT]: The `bool` keyword is now autocompleted (part of https://github.com/prometheus-community/codemirror-promql/releases/tag/0.11.0).
+* [ENHANCEMENT]: The autocompletion now uses an LRU cache to limit the amount of cached items (part of https://github.com/prometheus-community/codemirror-promql/releases/tag/0.11.0).
+* [BUGFIX]: Fixed a visual glitch in the graph mouse hover detail popup.
+* [BUGFIX]: Switching to the "Explain" tab for vector-to-vector binary operators that were created using the form-based editor works now and no longer causes an error.
+
 ## 0.10.0 / 2020-10-19
 
 * [FEATURE]: In autocomplete, show the metric type and docstring for every metric (provided the datasource can provide them).
