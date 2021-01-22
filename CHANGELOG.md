@@ -1,3 +1,7 @@
+## 0.11.1 / 2021-01-22
+
+* [BUGFIX]: Correctly show query error messages underneath the query field, not next to it.
+
 ## 0.11.0 / 2020-12-15
 
 **Breaking Change:** When upgrading using an existing SQLite3 database to store shared links, you need to manually update the schema of the `views` table to the following (the `ON DELETE CASCADE` is new):
