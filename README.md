@@ -49,9 +49,11 @@ Flags:
                                  Name of the GCS bucket for storing shared links. Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the JSON file defining your service account credentials (needs to have permission to create, delete, and view objects in the provided bucket).
       --shared-links.sql.driver=""
                                  The SQL driver to use for storing shared links in a SQL database. Supported values: [mysql, sqlite3].
-      --shared-links.sql.dsn=""  SQL Data Source Name when using an SQL database to shared links (see https://github.com/go-sql-driver/mysql#dsn-data-source-name) for MySQL, https://github.com/mattn/go-sqlite3#dsn-examples for SQLite3). Alternatively, use the environment variable PROMLENS_SHARED_LINKS_DSN to indicate this value.
+      --shared-links.sql.dsn=""  SQL Data Source Name when using a SQL database to shared links (see https://github.com/go-sql-driver/mysql#dsn-data-source-name) for MySQL, https://github.com/mattn/go-sqlite3#dsn-examples for SQLite3). Alternatively, use the environment variable PROMLENS_SHARED_LINKS_DSN to indicate this value.
       --shared-links.sql.create-tables
                                  Whether to automatically create the required tables when using a SQL database for shared links.
+      --shared-links.sql.retention=0
+                                 The maximum retention time for shared links when using a SQL database (e.g. '10m', '12h'). Set to 0 for infinite retention.
       --grafana.url=""           The URL of your Grafana installation, to enable the Grafana datasource selector.
       --grafana.api-token=""     The auth token to pass to the Grafana API.
       --grafana.api-token-file=""
@@ -65,6 +67,8 @@ Flags:
       --log.level=info           Only log messages with the given severity or above. One of: [debug, info, warn, error]
       --log.format=logfmt        Output format of log messages. One of: [logfmt, json]
 ```
+
+For boolean flags that default to `true`, you can set them to `false` by specifying `--no-<flag-name>`, e.g. `--no-shared-links.sql.create-tables`.
 
 ### Providing a license key (OPTIONAL, for non-free features)
 
