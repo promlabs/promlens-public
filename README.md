@@ -102,7 +102,7 @@ To save shared links to a local SQLite3 database, set the `--shared-links.sql.dr
 
 To save shared links in a MySQL database, set the `--shared-links.sql.driver=mysql` and `--shared-links.sql.dsn=<data source name>` flag (see https://github.com/go-sql-driver/mysql#dsn-data-source-name for MySQL DNS specifications).
 
-By default, PromLens will try to auto-create the necessary tables in your MySQL database. This requires the PromLens database user to have `CREATE` permissions. To turn off automatic table creation for MySQL, set the `--no-shared-links.sql.create-tables=false` flag. If you want to create tables manually, run the following against your PromLens MySQL database:
+By default, PromLens will try to auto-create the necessary tables in your MySQL database. This requires the PromLens database user to have `CREATE` permissions. To turn off automatic table creation for MySQL, set the `--no-shared-links.sql.create-tables` flag. If you want to create tables manually, run the following against your PromLens MySQL database:
 
 ```sql
 CREATE TABLE IF NOT EXISTS link (
