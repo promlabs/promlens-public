@@ -3,7 +3,7 @@
 * [FEATURE]: Added new labels explorer within the metrics explorer that allows inspecting and filtering down on a metric name's labels.
 * [FEATURE]: PromQL: Added support for new functions `last_over_time()`, `sgn()`, and `clamp()`, that were added in Prometheus 2.26.0.
 * [FEATURE]: PromQL: Added support for experimental negative offsets that were added in Prometheus 2.26.0.
-* [FEATURE]: PromQL: Added support for experimental `@` modifier that was added in Prometheus 2.26.0.
+* [FEATURE]: PromQL: Added support for experimental `@` modifier that was added in Prometheus 2.25.0.
 * [ENHANCEMENT]: Updated the `codemirror-promql` dependency that powers the PromQL text editor from 0.11.0 to 0.16.0, yielding better autocompletion, more language features, and minor fixes. See https://github.com/prometheus-community/codemirror-promql/releases for details.
 * [ENHANCEMENT]: Updated various frontend and backend dependency versions.
 * [CLEANUP]: Removed loading of an unneeded external script in the self-hosted version of PromLens.
