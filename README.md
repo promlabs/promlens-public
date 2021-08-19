@@ -53,11 +53,13 @@ Flags:
       --shared-links.sql.create-tables
                                  Whether to automatically create the required tables when using a SQL database for shared links.
       --shared-links.sql.retention=0
-                                 The maximum retention time for shared links when using a SQL database (e.g. '10m', '12h'). Set to 0 for infinite retention.
+                                 The maximum retention time for shared links when using a SQL database (e.g. '10m', '12h', '30d'). Set to 0 for infinite retention.
       --grafana.url=""           The URL of your Grafana installation, to enable the Grafana datasource selector.
       --grafana.api-token=""     The auth token to pass to the Grafana API.
       --grafana.api-token-file=""
                                  A file containing the auth token to pass to the Grafana API.
+      --grafana.default-datasource-id=0
+                                 The default Grafana datasource ID to use (overrides Grafana's own default).
       --web.listen-address=":8080"
                                  The address to listen on for the web API.
       --web.external-url=""      The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically.
