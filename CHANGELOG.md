@@ -6,7 +6,7 @@
 * [ENHANCEMENT]: Updated function documentations from upstream Prometheus project.
 * [ENHANCEMENT]: When trying to graph a range vector selector (which normally cannot be directly graphed), PromLens now graphs the equivalent instant vector selector instead of showing an error.
 * [ENHANCEMENT]: Also support Prometheus versions <2.6.0 now by switching the server health check endpoint from `/api/v1/labels` (which was only introduced in Prometheus 2.6.0) to `/api/v1/query?query=1`.
-*
+
 ## 1.0.0 / 2021-05-26
 
 * [FEATURE]: Added new labels explorer within the metrics explorer that allows inspecting and filtering down on a metric name's labels.
