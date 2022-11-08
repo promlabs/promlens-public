@@ -1,6 +1,6 @@
 # PromLens
 
-**NOTE**: PromLens has been open-sourced to the Prometheus project and now lives at https://github.com/prometheus/promlens!
+**NOTE: This repository documents the former commercial version of PromLens. PromLens has since been open-sourced to the Prometheus project and now lives at https://github.com/prometheus/promlens. PromLens is now free for anyone to use without a license key!**
 
 This repository contains documentation and public issues and feature requests for the [PromLens PromQL query builder, analyzer, and visualizer](https://promlens.com/).
 
@@ -162,7 +162,3 @@ When running the preview version of PromLens without a license key, the backend 
 If you enable link sharing and/or Grafana datasource integration when using PromLens with a license key, the backend also stores and retrieves shared links and connects to Grafana to list datasources and proxy queries:
 
 ![Advanced PromLens architecture](images/promlens_advanced_architecture.svg)
-
-### License
-
-If you are interested in a trial license key to unlock commercial features, please send an email to info@promlabs.com or sign up at https://promlens.com/pricing.
