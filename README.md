@@ -1,5 +1,7 @@
 # PromLens
 
+**NOTE**: PromLens has been open-sourced to the Prometheus project and now lives at https://github.com/prometheus/promlens!
+
 This repository contains documentation and public issues and feature requests for the [PromLens PromQL query builder, analyzer, and visualizer](https://promlens.com/).
 
 ## Reporting issues
